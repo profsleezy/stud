@@ -1,0 +1,217 @@
+/* src/PurchaseSection.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+
+/* Keyframes for pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Keyframes for rotate pulse animation */
+@keyframes rotatePulse {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(10deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* Keyframes for sliding animations */
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* Keyframes for scrolling text animation */
+@keyframes scrollText {
+  0% {
+    transform: translateX(30%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
+
+.section-divider {
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  height: 7vh;
+  max-height: 100%; /* Height of the divider line */
+  position: relative;
+  overflow: hidden; /* Ensure scrolling text stays within bounds */
+  margin-bottom: -3vh; /* Space below the divider line */
+}
+
+.scroll-text {
+  white-space: nowrap; /* Prevent text wrapping */
+  position: absolute;
+  top: 0%; /* Center vertically */
+  left: 0;
+  transform: translateY(-50%);
+  animation: scrollText 1s linear infinite; /* Adjusted duration for smoother scroll */
+  color: #000000;
+  font-family: 'Knewave', cursive;
+  font-size: 2vw; /* Font size for scrolling text */
+  width: 2%; /* Ensure the text scrolls completely off the viewport */
+}
+@media (max-width: 972px) {
+  .scroll-text {
+    font-size: 3vw;
+  }
+}
+@media (max-width: 768px) {
+  .scroll-text {
+    font-size: 4vw;
+  }
+}
+@media (max-width: 480px) {
+  .scroll-text {
+    font-size: 6vw;
+  }
+}
+
+.purchase-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10vh 2vw; /* Use viewport units for padding */
+}
+
+.purchase-content {
+  text-align: center;
+  max-width: 3000px;
+  width: 100%;
+}
+
+.purchase-content h1 {
+  font-size: 5vw; /* Use viewport width units for font size */
+  font-family: 'Knewave', cursive; /* Custom font */
+  color: #ffffff; /* Dark text color */
+  margin-bottom: 2vh; /* Space below the header */
+  text-shadow: 4px 4px 0 #000, -4px 4px 0 #000, -4px -4px 0 #000, 4px -4px 0 #000; /* Static black outline */
+}
+
+.purchase-content p {
+    font-size: 2vw; /* Use viewport width units for font size */
+    font-family: 'Knewave', cursive; /* Custom font */
+    color: #ffffff; /* Dark text color */
+  }
+  
+.purchase-logo {
+  width: 20vw; /* Adjust logo size relative to viewport width */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 3vh; /* Space between the logo and boxes */
+  animation: rotatePulse 3s infinite; /* Apply rotate pulse animation */
+}
+
+.purchase-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3vw; /* Space between boxes */
+  justify-content: center; /* Center boxes horizontally */
+  position: relative; /* Enable positioning for overlap effect */
+  margin-bottom: 2vh; /* Space below boxes and rectangle */
+}
+
+.purchase-box {
+  background-color: #34130A;
+  border: 10px solid #000;
+  font-family: 'Knewave', cursive; /* Custom font */
+  font-size: 3vh;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 2vw;
+  width: 50vh; /* Fixed width for boxes */
+  min-height: 300px; /* Ensure box has sufficient height */
+  flex: 0 1 auto; /* Prevent boxes from shrinking */
+  box-sizing: border-box; /* Include padding and border in width */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+  position: relative; /* Position relative for z-index control */
+  margin-top: 2vh; /* Space between image and box */
+  z-index: 3;
+  opacity: 0; /* Start hidden for animation */
+}
+
+.purchase-box.left-box.animate {
+  animation: slideInFromLeft 1s forwards; /* Slide in from left */
+}
+
+.purchase-box.middle-box.animate {
+  animation: slideInFromTop 1s forwards; /* Slide in from top */
+}
+
+.purchase-box.right-box.animate {
+  animation: slideInFromRight 1s forwards; /* Slide in from right */
+}
+
+.long-rectangle {
+  background-color: #34130A; /* Dark background color */
+  border: 10px solid #020202; /* Dark border color */
+  border-radius: 20px; /* Slightly rounded corners */
+  padding: 2vw; /* Padding inside rectangle */
+  width: 90%; /* Adjust width as needed */
+  margin-top: 3vh; /* Space between boxes and rectangle */
+  font-size: 1.5vw; /* Font size for text */
+  color: #ffffff; /* Light text color */
+  text-align: center; /* Center text inside rectangle */
+  font-family: 'Knewave', cursive; /* Custom font */
+  margin-left: 2%;
+  opacity: 0; /* Start hidden for animation */
+}
+
+.long-rectangle.animate {
+  animation: slideInFromBottom 1s forwards; /* Slide in from bottom */
+}

@@ -1,0 +1,215 @@
+/* src/Gallery.css */
+
+/* Keyframes for scrolling text animation */
+@keyframes scrollText {
+  0% {
+    transform: translateX(30%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
+
+.section-divider {
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  height: 7vh;
+  max-height: 100%; /* Height of the divider line */
+  position: relative;
+  overflow: hidden; /* Ensure scrolling text stays within bounds */
+  margin-bottom: -3vh; /* Space below the divider line */
+}
+
+.scroll-text {
+  white-space: nowrap; /* Prevent text wrapping */
+  position: absolute;
+  top: 0%; /* Center vertically */
+  left: 0;
+  transform: translateY(-50%);
+  animation: scrollText 1s linear infinite; /* Adjusted duration for smoother scroll */
+  color: #000000;
+  font-family: 'Knewave', cursive;
+  font-size: 2vw; /* Font size for scrolling text */
+  width: 2%; /* Ensure the text scrolls completely off the viewport */
+}
+@media (max-width: 972px) {
+  .scroll-text {
+    font-size: 3vw;
+  }
+}
+@media (max-width: 768px) {
+  .scroll-text {
+    font-size: 4vw;
+  }
+}
+@media (max-width: 480px) {
+  .scroll-text {
+    font-size: 6vw;
+  }
+}
+.gallery {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 100%;
+}
+
+.gallery h1 {
+  font-family: 'Knewave', cursive;
+  font-size: 7rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.gallery-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: opacity 1s ease-in-out; /* Smooth transition */
+}
+
+.image-caption {
+  font-family: 'Knewave', cursive;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-top: 1rem;
+}
+
+.arrow {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: #ffffff;
+}
+
+.left-arrow {
+  left: 0;
+  padding: 0 1rem;
+}
+
+.right-arrow {
+  right: 0;
+  padding: 0 1rem;
+}
+
+.end-image {
+  max-width: 10vw; /* Maintain size relative to viewport width */
+  margin-top: 10vh; /* Increase top margin to move the image down */
+  margin-bottom: -7.3vh; /* Adjust bottom margin for consistency */
+  display: block; /* Ensure image displays as a block element */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 768px) {
+  .end-image {
+    max-width: 20vw; /* Adjust size for medium screens */
+    margin-top: 10vh; /* Adjust top margin for medium screens */
+    margin-bottom: -13vh; /* Adjust bottom margin for medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .end-image {
+    max-width: 30vw; /* Adjust size for small screens */
+    margin-top: 8vh; /* Adjust top margin for small screens */
+    margin-bottom: -10vh; /* Adjust bottom margin for small screens */
+  }
+}
+
+.gallery {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 100%;
+}
+
+.gallery h1 {
+  font-family: 'Knewave', cursive;
+  font-size: 7rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.gallery-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: opacity 1s ease-in-out; /* Smooth transition */
+}
+
+.arrow {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: #ffffff;
+}
+
+.left-arrow {
+  left: 0;
+  padding: 0 1rem;
+}
+
+.right-arrow {
+  right: 0;
+  padding: 0 1rem;
+}
+
+.end-image {
+  max-width: 10vw; /* Maintain size relative to viewport width */
+  margin-top: 10vh; /* Increase top margin to move the image down */
+  margin-bottom: -7.3vh; /* Adjust bottom margin for consistency */
+  display: block; /* Ensure image displays as a block element */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 768px) {
+  .end-image {
+    max-width: 20vw; /* Adjust size for medium screens */
+    margin-top: 10vh; /* Adjust top margin for medium screens */
+    margin-bottom: -13vh; /* Adjust bottom margin for medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .end-image {
+    max-width: 30vw; /* Adjust size for small screens */
+    margin-top: 8vh; /* Adjust top margin for small screens */
+    margin-bottom: -10vh; /* Adjust bottom margin for small screens */
+  }
+}

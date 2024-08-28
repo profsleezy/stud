@@ -1,0 +1,87 @@
+/* src/components/Header.css */
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+
+.header {
+  position: fixed; /* Fix the header to the top of the viewport */
+  top: 0; /* Align it to the top */
+  left: 0; /* Align it to the left edge */
+  right: 0; /* Ensure it spans the full width */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  padding: 0.3vw 2vw; /* Use viewport width units for padding */
+  background-color: black; /* Background color set to black */
+  color: white;
+  border-bottom: 2px solid #333; /* Darker border for contrast */
+  z-index: 1000; /* Ensure the header is above other content */
+}
+
+.header-link-group {
+  display: flex;
+  gap: 5vw; /* Use viewport width units for spacing between links */
+  align-items: center;
+}
+
+.header-link-group a {
+  color: white;
+  text-decoration: none;
+  font-size: 2vw; /* Use viewport width units for font size */
+  font-family: 'Knewave', cursive; /* Apply custom font */
+  transition: color 0.3s ease, transform 0.3s ease; /* Added transform transition */
+  position: relative; /* For animation positioning */
+}
+
+.header-link-group a:hover {
+  color: #ffcc00; /* Light salmon color for hover effect */
+  transform: scale(1.1); /* Slightly enlarge the link on hover */
+}
+
+.header-link-group a::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #ffcc00; /* Underline color */
+  transition: width 0.3s ease; /* Underline animation */
+  transform: translateX(-50%);
+}
+
+.header-link-group a:hover::before {
+  width: 100%; /* Expand underline on hover */
+}
+
+.logo {
+  height: 5vw; /* Use viewport width units for height */
+  width: auto; /* Maintain aspect ratio */
+  margin: 0 5vw; /* Use viewport width units for margin */
+  transition: transform 0.3s ease; /* Added transform transition for logo */
+}
+
+.logo:hover {
+  transform: rotate(10deg); /* Rotate logo on hover */
+}
+
+/* Adjust content spacing to prevent overlap with the fixed header */
+body {
+  margin: 0;
+  padding-top: 8vw; /* Adjust based on header height */
+}
+
+html {
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .header-link-group {
+    display: none; /* Hide the link group */
+  }
+
+  .logo {
+    margin: 0; /* Remove margin to center logo */
+    height: 10vw; /* Adjust size for smaller screens */
+  }
+}
+    

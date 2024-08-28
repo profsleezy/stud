@@ -1,0 +1,18 @@
+/* src/App.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; /* Fallback font */
+  background: url('./background.png') no-repeat center center fixed;
+  background-size: cover; /* Ensure the background image covers the entire page */
+  color: white; /* Default text color */
+}
+
+.App {
+  text-align: center;
+}
+
+/* Additional styles to ensure the layout looks good */
+main {
+  padding: 20px;
+}

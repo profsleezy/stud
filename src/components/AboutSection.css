@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+
+@keyframes rotatePulse {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(15deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-150%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-40px);
+  }
+  60% {
+    transform: translateY(-20px);
+  }
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh 2vw; /* Use viewport units for padding */
+  position: relative;
+  overflow: hidden; /* Ensure animations stay within bounds */
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.about-text,
+.about-image {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.about-text.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  animation: slideIn 1s ease-out forwards, shake 1s ease-in-out forwards, fadeIn 1s ease-out forwards;
+}
+
+.about-image.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeIn 1s ease-out forwards, bounce 2s infinite;
+}
+
+.about-text {
+  flex: 1;
+  padding-right: 2vw;
+}
+
+.about-text h1 {
+  font-size: 5vw;
+  font-family: 'Knewave', cursive;
+  color: #f7f7f7;
+  text-shadow: 4px 4px 0 #000, -4px 4px 0 #000, -4px -4px 0 #000, 4px -4px 0 #000;
+  margin-bottom: 2vh;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.about-text p {
+  font-size: 1.8vw;
+  font-family: 'Knewave', cursive;
+  color: #ffffff;
+  text-shadow: 4px 4px 0 #000, -4px 4px 0 #000, -4px -4px 0 #000, 4px -4px 0 #000;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  max-width: 100%; /* Ensure the image scales within its container */
+  max-height: 70vh; /* Limit the height to maintain consistency across devices */
+  transition: transform 0.5s ease;
+  animation: rotatePulse 3s infinite;
+}
+
+.about-image img:hover {
+  transform: scale(1.1);
+}
+
+/* Media queries for small screens */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    padding: 4vh 2vw;
+  }
+  
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+  
+  .about-text,
+  .about-image {
+    width: 100%;
+    text-align: center; /* Center text on smaller screens */
+
+  }
+  
+  .about-text {
+    padding-right: 0;
+    margin-bottom: 2vh;
+    text-shadow: none;
+  }
+  
+  .about-text h1 {
+    font-size: 6vw; /* Adjust font size for smaller screens */
+    margin-bottom: 1.5vh;
+    text-shadow: none;
+  }
+  
+  .about-text p {
+    font-size: 4vw; /* Adjust font size for smaller screens */
+    text-shadow: none;
+  }
+  
+  .about-image img {
+    max-height: 50vh; /* Further reduce the image height */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-text h1 {
+    font-size: 7vw; /* Adjust font size for very small screens */
+  }
+  
+  .about-text p {
+    font-size: 5vw; /* Adjust font size for very small screens */
+  }
+}
