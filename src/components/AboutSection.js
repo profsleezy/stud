@@ -40,11 +40,10 @@ const AboutSection = () => {
         >
           <h1>About:</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Suspendisse potenti. Vivamus ac purus in ligula fermentum volutpat. 
-            Quisque non velit et nunc scelerisque bibendum a eu mi. 
-            Donec congue urna nec mi bibendum, vel sodales elit gravida. 
-            Donec malesuada nisl eu lacus bibendum tincidunt.
+          Our Solana STUD lived a pretty trashy life, working 9-5,
+          living pay check to pay check, until one day, he found his way out of the matrix.
+          Join the STUD army to learn how he manged to escape the matrix so you can too. 
+          He'll share his journey ups and downs, and his secrets and life style!
           </p>
         </div>
         <div 

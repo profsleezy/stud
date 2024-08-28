@@ -3,11 +3,11 @@ import React, { useState, useEffect } from 'react';
 import './Gallery.css'; // Import the CSS file for styling
 
 const images = [
-  { src: 'image1.png', caption: 'Caption for Image 1' },
-  { src: 'image2.png', caption: 'Caption for Image 2' },
-  { src: 'image3.png', caption: 'Caption for Image 3' },
-  { src: 'image4.png', caption: 'Caption for Image 4' },
-  { src: 'image5.png', caption: 'Caption for Image 5' },
+  { src: 'image1.png', caption: 'Stud and his first ever interview with controversial media figure Tucker Carlson' },
+  { src: 'image2.png', caption: 'Stud defeats Morgan in a 1 on 1 chess match going two and 0 that night!' },
+  { src: 'image3.png', caption: 'Stud had a secret meeting with then president Donald J Trump. Sadly no other info can be shared. ' },
+  { src: 'image4.png', caption: 'Stud led the first ever War Room meeting, this is very rarely spoken about.' },
+  { src: 'image5.png', caption: 'Stud and Elon musk meet for the first time, leaving Elon star struck' },
   // Add more image paths and captions as needed
 ];
 
