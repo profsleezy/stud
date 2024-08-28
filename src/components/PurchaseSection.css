@@ -82,6 +82,11 @@
   }
 }
 
+.highlight {
+  color: #FFCC00; /* Gold color */
+}
+
+
 .section-divider {
   width: 100%;
   background-color: #ffffff;

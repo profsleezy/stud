@@ -59,7 +59,7 @@ const PurchaseSection = () => {
             </div>
             <div className="purchase-box right-box">
               <h2>Step 3</h2>
-              <p>GET $STUD HERE</p>
+              <p>GET <span className="highlight">$STUD</span> HERE</p>
             </div>
           </div>
           
